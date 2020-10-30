@@ -30,12 +30,11 @@ class Song
   end
 
   def self.find_by_name(name)
+    result = nil
   @@all.each do |song|
-    if song.name == name
-     return song
-      end
+    result = song if song.name == name
     end
-    nil
+    result
   end
 
   def self.find_or_create_by_name(name)
